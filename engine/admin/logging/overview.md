@@ -132,6 +132,7 @@ $ docker run -it --log-driver none alpine ash
 |-------------------|-------------|---------------|
 | `mode`            | Sets the logging mode, accepted values are `blocking` (default), and `non-blocking`. When `non-blocking` is set, if the log buffer fills up, log messages will be lost. How messages are dropped is left undefined. | `--log-opt mode=non-blocking`
 | `max-buffer-size` | Applicable only when `mode` is set to `non-blocking`, this sets the maxmimum size of the log buffer. Once this size is reach, log messages will be dropped. | `--log-opt max-buffer-size 5m`
+| `max-log-size` | This sets the maxmimum size of a single log line. Log lines that are larger than this size will be split.  The default size is 16k. | `--log-opt max-log-size 32k`
 
 ## `json-file`
 
